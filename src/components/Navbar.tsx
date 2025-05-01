@@ -15,10 +15,12 @@ const Navbar: React.FC<NavbarProps> = ({ isLoggedIn, setIsLoggedIn }) => {
   const navigate = useNavigate();
   const [totalItems, setTotalItems] = useState(0);
   const [searchQuery, setSearchQuery] = useState('');
-  const [userName, setUserName] = useState<string | null>(null); 
+  const [userName, setUserName] = useState<string | null>(null);
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('user') || sessionStorage.getItem('user') || 'null');
+    const user = JSON.parse(
+      localStorage.getItem('user') || sessionStorage.getItem('user') || 'null'
+    );
     if (user?.name) {
       setUserName(user.name);
     }
@@ -57,17 +59,42 @@ const Navbar: React.FC<NavbarProps> = ({ isLoggedIn, setIsLoggedIn }) => {
           GlowNest
         </Link>
 
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mx-auto mb-2 mb-lg-0 d-flex align-items-center gap-4">
-            <li className="nav-item"><Link to="/home" className="nav-link text-dark">{t('home')}</Link></li>
-            <li className="nav-item"><Link to="/soaps" className="nav-link text-dark">{t('soaps')}</Link></li>
-            <li className="nav-item"><Link to="/serums" className="nav-link text-dark">{t('serums')}</Link></li>
-            <li className="nav-item"><Link to="/oils" className="nav-link text-dark">{t('oils')}</Link></li>
-            <li className="nav-item"><Link to="/lip-care" className="nav-link text-dark">{t('lipCare')}</Link></li>
+            <li className="nav-item">
+              <Link to="/home" className="nav-link text-dark">
+                {t('home')}
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/soaps" className="nav-link text-dark">
+                {t('soaps')}
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/serums" className="nav-link text-dark">
+                {t('serums')}
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/oils" className="nav-link text-dark">
+                {t('oils')}
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/lip-care" className="nav-link text-dark">
+                {t('lipCare')}
+              </Link>
+            </li>
           </ul>
 
           <form className="d-flex me-3" onSubmit={handleSearch}>
@@ -82,7 +109,9 @@ const Navbar: React.FC<NavbarProps> = ({ isLoggedIn, setIsLoggedIn }) => {
           </form>
 
           <div className="d-flex align-items-center gap-3">
-            <Link to="/favorites" className="text-dark"><FaHeart size={20} /></Link>
+            <Link to="/favorites" className="text-dark">
+              <FaHeart size={20} />
+            </Link>
 
             <Link to="/cart" className="text-dark position-relative">
               <FaShoppingCart size={20} />
@@ -94,22 +123,46 @@ const Navbar: React.FC<NavbarProps> = ({ isLoggedIn, setIsLoggedIn }) => {
             </Link>
 
             <div className="dropdown">
-              <button className="btn btn-link p-0 border-0" data-bs-toggle="dropdown" aria-expanded="false">
+              <button
+                className="btn btn-link p-0 border-0"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 <FaUserCircle size={24} className="text-dark" />
               </button>
               <ul className="dropdown-menu dropdown-menu-end">
                 {isLoggedIn ? (
                   <>
                     {userName && (
-                      <li><span className="dropdown-item text-muted">👤 {userName}</span></li>
+                      <li>
+                        <span className="dropdown-item text-muted">
+                          👤 {userName}
+                        </span>
+                      </li>
                     )}
-                    <li><Link className="dropdown-item" to="/profile">{t('profile')}</Link></li>
-                    <li><button className="dropdown-item" onClick={handleLogout}>{t('logout')}</button></li>
+                    <li>
+                      <Link className="dropdown-item" to="/profile">
+                        {t('profile')}
+                      </Link>
+                    </li>
+                    <li>
+                      <button className="dropdown-item" onClick={handleLogout}>
+                        {t('logout')}
+                      </button>
+                    </li>
                   </>
                 ) : (
                   <>
-                    <li><Link className="dropdown-item" to="/login">{t('login')}</Link></li>
-                    <li><Link className="dropdown-item" to="/register">{t('register')}</Link></li>
+                    <li>
+                      <Link className="dropdown-item" to="/login">
+                        {t('login.title')}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/register">
+                        {t('register.title')}
+                      </Link>
+                    </li>
                   </>
                 )}
               </ul>
@@ -122,6 +175,7 @@ const Navbar: React.FC<NavbarProps> = ({ isLoggedIn, setIsLoggedIn }) => {
 };
 
 export default Navbar;
+
 
 
 
