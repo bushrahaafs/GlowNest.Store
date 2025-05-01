@@ -1,0 +1,66 @@
+/* loginStyles.css */
+
+body {
+  background-color: #f8f9fa;
+}
+
+.login-left {
+  background: linear-gradient(to top right, #3c3c3c, #6b8e23);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.login-left h1 {
+  font-weight: bold;
+}
+
+.login-left p {
+  font-size: 1rem;
+  color: #eee;
+}
+
+.form-control.is-invalid {
+  border-color: #dc3545;
+}
+
+.invalid-feedback {
+  font-size: 0.875rem;
+}
+
+.btn-dark {
+  background-color: #000;
+  border-color: #000;
+}
+
+.btn-dark:hover {
+  background-color: #222;
+  border-color: #222;
+}
+.rtl .form-check {
+  display: flex;
+  align-items: center;
+  direction: rtl;
+  gap: 0.4rem;
+}
+
+.rtl .form-check-input {
+  order: 2;
+}
+
+.rtl .form-check-label {
+  order: 1;
+}
+.rtl input.form-control {
+  text-align: right;
+  direction: rtl;
+}
+
+.rtl label.form-label {
+  display: block;
+  text-align: right;
+}
+
+

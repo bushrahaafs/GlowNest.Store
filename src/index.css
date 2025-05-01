@@ -1,0 +1,38 @@
+/* src/index.css */
+
+/* Reset بسيط */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* اتجاه الصفحة */
+html[dir='ltr'] { direction: ltr; text-align: left; }
+html[dir='rtl'] { direction: rtl; text-align: right; }
+
+/* تنسيقات عامة */
+body {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background-color: #fafafa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* مسافة المحتوى عن الـNavbar */
+.main-content {
+  padding-top: 80px;
+}
+
+/* تنسيقات للكروت والأزرار */
+.card {
+  border-radius: 8px;
+}
+
+.btn-cta {
+  background-color: #e3b04b;
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease;
+}
+

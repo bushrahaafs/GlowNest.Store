@@ -1,0 +1,151 @@
+/* src/App.css */
+
+/* Container عام للمحتوى */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* أيقونات مع عداد */
+.icons-with-qty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* حقل الكمية */
+.qty-input {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+/* أيقونات */
+.icon {
+  font-size: 20px;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #e3b04b;
+}
+
+/* كارت المنتج */
+.product-card {
+  width: 250px;
+  height: 350px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+  background-color: #fff;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+/* صورة المنتج */
+.product-image img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.product-image img:hover {
+  transform: scale(1.03);
+}
+
+/* عنوان الصفحة */
+.page-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.75rem;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+/* تفاصيل المنتج */
+.product-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.product-info {
+  max-width: 600px;
+  padding: 20px;
+}
+
+.product-info h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.product-info p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* تحسين الأزرار والروابط */
+.btn, .btn-cta {
+  transition: all 0.3s ease;
+}
+
+.btn:hover, .btn-cta:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+a.nav-link {
+  transition: color 0.3s ease;
+}
+
+a.nav-link:hover {
+  color: #1abc9c;
+}
+
+/* Animation عند التمرير */
+.scroll-animation {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.scroll-animation.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+
+
+
