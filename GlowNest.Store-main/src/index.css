@@ -1,0 +1,62 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* اتجاه الصفحة */
+html[dir='ltr'] { direction: ltr; text-align: left; }
+html[dir='rtl'] { direction: rtl; text-align: right; }
+
+/* متغيرات الألوان - Light mode */
+:root {
+  --page-bg: #ffffff;        /* خلفية الصفحة الكاملة */
+  --bg-color: #ffffff;       /* خلفية الحاويات */
+  --text-color: #000000;
+  --card-bg: #f9f9f9;
+}
+
+.dark {
+  --page-bg: #1a1a1a;        /* ← هنا نخليها خلفية الصفحة العامة الغامقة */
+  --bg-color: #2b2b2b;       /* ← الخلفية الداخلية للكروت والبلوكات */
+  --text-color: #f5f5f5;
+  --card-bg: #3a3a3a;
+}
+
+
+/* تطبيق الألوان العامة */
+html, body {
+  background-color: var(--page-bg); /* ← بدلاً من --bg-color */
+  color: var(--text-color);
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+/* عناصر عامة */
+.main-content {
+  padding-top: 80px;
+}
+
+.card {
+  border-radius: 8px;
+}
+
+.btn-cta {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
