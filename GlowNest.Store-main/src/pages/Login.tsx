@@ -38,6 +38,31 @@ const Login: React.FC<{ setIsLoggedIn: (val: boolean) => void }> = ({ setIsLogge
       setRememberMe(true);
     }
   }, []);
+//زيادة تحديد مدة الطلوع
+  useEffect(() => {
+    let logoutTimer: NodeJS.Timeout;
+    const timeoutDuration = 600000; 
+
+    const logoutUser = () => {
+      toast.info(t('login.sessionExpired'));
+      navigate('/login');  };
+
+    const resetTimer = () => {
+      clearTimeout(logoutTimer);
+      logoutTimer = setTimeout(logoutUser, timeoutDuration);
+    };
+
+    document.addEventListener('mousemove', resetTimer);
+    document.addEventListener('keydown', resetTimer);
+
+    resetTimer();
+
+    return () => {
+      document.removeEventListener('mousemove', resetTimer);
+      document.removeEventListener('keydown', resetTimer);
+      clearTimeout(logoutTimer);
+    };
+  }, [navigate, t]);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -101,7 +126,7 @@ const Login: React.FC<{ setIsLoggedIn: (val: boolean) => void }> = ({ setIsLogge
           <p className="text-light">{i18n.language === 'ar' ? 'سجّل دخولك لمتابعة التسوق' : 'Login to continue shopping with GlowNest.'}</p>
         </div>
 
-        <div className="col-md-6 p-5" style={{ backgroundColor: 'var(--card-bg)', color: 'var(--text-color)' }}> 
+        <div className="col-md-6 p-5" style={{ backgroundColor: 'var(--card-bg)', color: 'var(--text-color)' }}>
           <h3 className="text-center mb-3">{t('login.title')}</h3>
           <form onSubmit={handleLogin}>
             <div className="mb-3">
@@ -160,8 +185,6 @@ const Login: React.FC<{ setIsLoggedIn: (val: boolean) => void }> = ({ setIsLogge
 };
 
 export default Login;
-
-
 
 
 
